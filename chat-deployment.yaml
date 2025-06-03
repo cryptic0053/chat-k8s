@@ -14,7 +14,14 @@ spec:
         app: chat
     spec:
       containers:
-      - name: chat-container
-        image: cryptic0053/node-chat:latest
-        ports:
-        - containerPort: 3000
+        - name: chat-container
+          image: cryptic0053/node-chat:latest
+          ports:
+            - containerPort: 3000
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
